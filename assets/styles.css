@@ -1328,21 +1328,24 @@ body {
     radial-gradient(circle at 10% -8%, rgba(241, 201, 123, 0.18), transparent 39%),
     radial-gradient(circle at 92% 10%, rgba(130, 214, 255, 0.14), transparent 42%),
     radial-gradient(circle at 85% 86%, rgba(132, 213, 168, 0.1), transparent 42%),
-    linear-gradient(175deg, #04060b 0%, #0c1016 52%, #141923 100%);
+    linear-gradient(175deg, #04060b 0%, #0c1016 52%, #141923 100%),
+    url("chess-bg-2.jpg") center / cover fixed no-repeat;
 }
 
 body::before {
   inset: -28vmax;
-  opacity: 0.72;
+  opacity: 0.66;
   background:
+    linear-gradient(160deg, rgba(4, 6, 10, 0.72), rgba(4, 6, 10, 0.86)),
+    url("chess-bg-1.jpg") center / cover no-repeat,
     radial-gradient(circle at 12% 20%, rgba(255, 224, 170, 0.18) 0, rgba(255, 224, 170, 0) 48%),
     radial-gradient(circle at 82% 14%, rgba(132, 214, 255, 0.2) 0, rgba(132, 214, 255, 0) 42%),
-    radial-gradient(circle at 76% 76%, rgba(132, 213, 168, 0.16) 0, rgba(132, 213, 168, 0) 44%),
     repeating-linear-gradient(
       45deg,
       rgba(248, 235, 205, 0.038) 0 16px,
       rgba(16, 20, 27, 0.04) 16px 32px
     );
+  background-blend-mode: normal, normal, screen, screen, normal;
   filter: blur(0);
 }
 
@@ -1368,26 +1371,40 @@ body::after {
 }
 
 .siteHeader::after {
-  content: "♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜";
-  display: block;
-  font-size: 10px;
-  letter-spacing: 16px;
-  color: rgba(242, 214, 166, 0.48);
-  text-align: center;
-  padding: 0 0 4px;
-  white-space: nowrap;
-  overflow: hidden;
+  content: "";
+  display: none;
+}
+
+.azRibbon {
+  height: 8px;
+  background:
+    linear-gradient(
+      90deg,
+      #00b5e2 0 33.33%,
+      #ef3340 33.33% 66.66%,
+      #509e2f 66.66% 100%
+    );
+}
+
+.topNav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.navLinks {
+  justify-content: center;
 }
 
 .brandTitle,
 h1,
 h2,
 h3 {
-  font-family: "Playfair Display", "Inter", serif;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
 .brandTitle {
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 }
 
 .brandLogo {
@@ -1399,12 +1416,22 @@ h3 {
 
 .navLinks a,
 .mobilePanel a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
   letter-spacing: 0.01em;
+  text-align: center;
 }
 
 .navLinks a::before,
 .mobilePanel a::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05em;
+  flex-shrink: 0;
+  line-height: 1;
   font-size: 0.98em;
   color: rgba(243, 220, 177, 0.86);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
@@ -1786,9 +1813,13 @@ h3 {
 }
 
 @media (max-width: 980px) {
-  .siteHeader::after {
-    font-size: 9px;
-    letter-spacing: 10px;
+  .topNav {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .navRight {
+    margin-left: auto;
   }
 
   .mobilePanel {
@@ -1827,8 +1858,35 @@ h3 {
     background-size: 145% 140%, 66px 66px;
   }
 
+  .topNav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand {
+    justify-self: center;
+  }
+
+  .navRight {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .langSwitch {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+  }
+
+  .menuToggle {
+    min-width: 92px;
+    padding-inline: 12px;
+  }
+
   .brandTitle {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .chessStrip {
@@ -1864,10 +1922,6 @@ h3 {
 }
 
 @media (max-width: 520px) {
-  .siteHeader::after {
-    letter-spacing: 7px;
-  }
-
   .mobilePanel.show {
     grid-template-columns: 1fr;
   }
@@ -1884,6 +1938,11 @@ h3 {
 
   .stripFrame {
     flex-basis: 84vw;
+  }
+
+  .langBtn {
+    padding: 6px 6px;
+    font-size: 11px;
   }
 }
 
