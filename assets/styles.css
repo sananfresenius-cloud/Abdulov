@@ -1326,28 +1326,27 @@ select:focus-visible {
 
 body {
   background:
-    radial-gradient(circle at 76% 18%, rgba(241, 201, 123, 0.24), rgba(241, 201, 123, 0) 44%),
-    linear-gradient(160deg, rgba(4, 6, 10, 0.9), rgba(7, 10, 15, 0.92)),
-    url("gold-chess-2.jpg") center 18% / cover fixed no-repeat;
+    radial-gradient(circle at 74% 18%, rgba(241, 201, 123, 0.34), rgba(241, 201, 123, 0) 46%),
+    linear-gradient(160deg, rgba(7, 10, 16, 0.58), rgba(9, 12, 18, 0.66)),
+    url("gold-chess-1.jpg") center 30% / cover fixed no-repeat;
 }
 
 body::before {
-  inset: -28vmax;
-  opacity: 0.46;
+  inset: -22vmax;
+  opacity: 0.34;
   background:
-    linear-gradient(160deg, rgba(4, 6, 10, 0.74), rgba(4, 6, 10, 0.9)),
-    url("gold-chess-1.jpg") center / cover no-repeat,
-    radial-gradient(circle at 20% 72%, rgba(241, 201, 123, 0.14), rgba(241, 201, 123, 0) 52%);
-  background-blend-mode: normal, normal, screen;
-  filter: saturate(1.02);
+    radial-gradient(circle at 18% 24%, rgba(255, 228, 176, 0.24), rgba(255, 228, 176, 0) 48%),
+    radial-gradient(circle at 84% 78%, rgba(130, 214, 255, 0.16), rgba(130, 214, 255, 0) 44%),
+    url("gold-chess-2.jpg") center 34% / cover no-repeat;
+  background-blend-mode: screen, screen, normal;
+  filter: saturate(1.06) brightness(1.04);
 }
 
 body::after {
-  opacity: 0.52;
+  opacity: 0.3;
   background-image:
-    linear-gradient(120deg, rgba(255, 255, 255, 0) 42%, rgba(255, 252, 240, 0.11) 50%, rgba(255, 255, 255, 0) 58%),
-    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0), rgba(1, 3, 8, 0.7) 76%);
-  background-size: 210% 180%, 100% 100%;
+    linear-gradient(120deg, rgba(255, 255, 255, 0) 42%, rgba(255, 252, 240, 0.15) 50%, rgba(255, 255, 255, 0) 58%);
+  background-size: 210% 180%;
 }
 
 .siteHeader {
@@ -1837,17 +1836,18 @@ h3 {
 @media (max-width: 980px) {
   body {
     background:
-      linear-gradient(160deg, rgba(4, 6, 10, 0.94), rgba(6, 8, 13, 0.96)),
-      url("gold-chess-1.jpg") center 24% / cover no-repeat;
+      radial-gradient(circle at 78% 22%, rgba(241, 201, 123, 0.3), rgba(241, 201, 123, 0) 46%),
+      linear-gradient(160deg, rgba(7, 10, 16, 0.48), rgba(9, 12, 18, 0.62)),
+      url("gold-chess-1.jpg") center 30% / cover no-repeat;
   }
 
   body::before {
-    inset: -12vmax;
-    opacity: 0.26;
+    inset: 0;
+    opacity: 0.2;
     background:
-      linear-gradient(160deg, rgba(4, 6, 10, 0.78), rgba(4, 6, 10, 0.9)),
-      radial-gradient(circle at 22% 28%, rgba(241, 201, 123, 0.24), rgba(241, 201, 123, 0) 44%);
-    background-blend-mode: normal, screen;
+      radial-gradient(circle at 22% 28%, rgba(241, 201, 123, 0.26), rgba(241, 201, 123, 0) 50%),
+      radial-gradient(circle at 78% 78%, rgba(132, 213, 168, 0.1), rgba(132, 213, 168, 0) 46%);
+    background-blend-mode: screen, screen;
   }
 
   body::after {
@@ -1900,12 +1900,12 @@ h3 {
 
 @media (max-width: 760px) {
   body {
-    background-position: center 18%;
+    background-position: center 26%;
   }
 
   body::before {
     inset: 0;
-    opacity: 0.18;
+    opacity: 0.14;
   }
 
   .topNav {
