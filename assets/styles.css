@@ -1393,11 +1393,18 @@ body::after {
 .topNav {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  align-items: start;
 }
 
 .navLinks {
   justify-content: center;
+  margin-top: 8px;
+  align-self: start;
+}
+
+.navRight {
+  margin-top: 8px;
+  align-self: start;
 }
 
 .brandTitle,
@@ -1838,10 +1845,12 @@ h3 {
   .topNav {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 10px;
+    align-items: start;
   }
 
   .navRight {
     margin-left: auto;
+    margin-top: 6px;
   }
 
   .mobilePanel {
@@ -1884,17 +1893,19 @@ h3 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    align-items: start;
     padding-bottom: 10px;
   }
 
   .brand {
-    justify-self: center;
+    justify-self: start;
   }
 
   .navRight {
     width: 100%;
     justify-content: space-between;
     gap: 8px;
+    margin-top: 6px;
   }
 
   .langSwitch {
@@ -1944,6 +1955,10 @@ h3 {
 }
 
 @media (max-width: 520px) {
+  .brand {
+    justify-self: start;
+  }
+
   .mobilePanel.show {
     grid-template-columns: 1fr;
   }
