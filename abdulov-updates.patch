@@ -1,0 +1,354 @@
+From 398237dc0fcdec2fcf458852a21c71d28b773fe2 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 20 Feb 2026 23:56:22 +0000
+Subject: [PATCH 1/3] Adjust mobile hero photo visibility
+
+---
+ assets/styles.css | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git a/assets/styles.css b/assets/styles.css
+index c279a6f..81cdb31 100644
+--- a/assets/styles.css
++++ b/assets/styles.css
+@@ -1158,6 +1158,28 @@ select:focus-visible {
+     padding-top: 24px;
+   }
+ 
++  .heroLanding .heroMedia {
++    order: -1;
++    width: min(100%, 340px);
++    margin-inline: auto;
++  }
++
++  .heroLanding .heroPhotoFrame {
++    margin-top: 6px;
++    padding: 6px;
++  }
++
++  .heroLanding .heroPortrait {
++    max-height: min(42vh, 280px);
++    object-position: top center;
++  }
++
++  .heroLanding .heroMedia h2,
++  .heroLanding .heroMedia p,
++  .heroLanding .heroMeta {
++    text-align: center;
++  }
++
+   h1 {
+     font-size: clamp(29px, 8.2vw, 42px);
+   }
+-- 
+2.43.0
+
+
+From b0dd2a16629dd31528abd64f1e268c9dbd7ea916 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 20 Feb 2026 23:59:36 +0000
+Subject: [PATCH 2/3] Clarify IM title text across AZ EN TR RU
+
+---
+ assets/i18n.js  | 24 ++++++++++++++++--------
+ federation.html |  2 +-
+ index.html      |  4 ++--
+ 3 files changed, 19 insertions(+), 11 deletions(-)
+
+diff --git a/assets/i18n.js b/assets/i18n.js
+index b75f799..b9902f7 100644
+--- a/assets/i18n.js
++++ b/assets/i18n.js
+@@ -20,11 +20,12 @@ window.ACC_I18N = {
+     home_title: "Abdulov Chess Club: daha güclü oyun üçün sistemli hazırlıq",
+     home_intro: "Klubumuz uşaqlar və böyüklər üçün peşəkar, ölçülə bilən və motivasiyaedici şahmat təlimi təqdim edir.",
+     home_photo_title: "Orxan Abdulov",
+-    home_photo_sub: "International Master (IM), Abdulov Chess Club təsisçisi və baş məşqçisi.",
++    home_photo_sub: "Beynəlxalq Şahmat Ustası (IM), Abdulov Chess Club təsisçisi və baş məşqçisi.",
++    home_hero_meta: "Beynəlxalq Şahmat Ustası (IM) • FIDE ID 13402714 • AZE",
+     home_gallery_title: "Orxan Abdulovdan canlı kadrlar",
+     home_gallery_hint: "Turnuva, məşq və master-klass anları",
+     home_gallery_intro: "Sizin göndərdiyiniz əlavə fotolardan seçilmiş anlar.",
+-    stat_title: "FIDE titulu",
++    stat_title: "Beynəlxalq Şahmat Ustası (IM)",
+     stat_fideid: "FIDE ID",
+     stat_federation: "Federasiya",
+     stat_birth: "Doğum ili",
+@@ -208,6 +209,7 @@ window.ACC_I18N = {
+     fed_r2_field: "FIDE ID",
+     fed_r2_note: "Rəsmi unikal profil nömrəsi",
+     fed_r3_field: "Titul",
++    fed_r3_value: "Beynəlxalq Şahmat Ustası (IM)",
+     fed_r3_note: "FIDE title qeydiyyatı",
+     fed_r4_field: "Federasiya",
+     fed_r4_note: "AZE olaraq göstərilir",
+@@ -283,11 +285,12 @@ window.ACC_I18N = {
+     home_title: "Abdulov Chess Club: structured training for stronger play",
+     home_intro: "Our club offers professional, measurable, and motivating chess coaching for kids and adults.",
+     home_photo_title: "Orkhan Abdulov",
+-    home_photo_sub: "International Master (IM), founder and head coach of Abdulov Chess Club.",
++    home_photo_sub: "International Chess Master (IM), founder and head coach of Abdulov Chess Club.",
++    home_hero_meta: "International Chess Master (IM) • FIDE ID 13402714 • AZE",
+     home_gallery_title: "Live moments with Orkhan Abdulov",
+     home_gallery_hint: "Tournament, training, and master-class scenes",
+     home_gallery_intro: "Selected moments from the additional photos you shared.",
+-    stat_title: "FIDE title",
++    stat_title: "International Chess Master (IM)",
+     stat_fideid: "FIDE ID",
+     stat_federation: "Federation",
+     stat_birth: "Birth year",
+@@ -471,6 +474,7 @@ window.ACC_I18N = {
+     fed_r2_field: "FIDE ID",
+     fed_r2_note: "Official unique profile number",
+     fed_r3_field: "Title",
++    fed_r3_value: "International Chess Master (IM)",
+     fed_r3_note: "FIDE title registration",
+     fed_r4_field: "Federation",
+     fed_r4_note: "Shown as AZE",
+@@ -546,11 +550,12 @@ window.ACC_I18N = {
+     home_title: "Abdulov Chess Club: daha guclu oyun icin sistemli egitim",
+     home_intro: "Kulübümüz cocuklar ve yetiskinler icin profesyonel ve olculebilir satranc egitimi sunar.",
+     home_photo_title: "Orkhan Abdulov",
+-    home_photo_sub: "International Master (IM), Abdulov Chess Club kurucusu ve bas antrenoru.",
++    home_photo_sub: "Uluslararasi Satranc Ustasi (IM), Abdulov Chess Club kurucusu ve bas antrenoru.",
++    home_hero_meta: "Uluslararasi Satranc Ustasi (IM) • FIDE ID 13402714 • AZE",
+     home_gallery_title: "Orkhan Abdulov'dan canli kareler",
+     home_gallery_hint: "Turnuva, antrenman ve master-class anlari",
+     home_gallery_intro: "Paylastiginiz ek fotograflardan secilen anlar.",
+-    stat_title: "FIDE unvani",
++    stat_title: "Uluslararasi Satranc Ustasi (IM)",
+     stat_fideid: "FIDE ID",
+     stat_federation: "Federasyon",
+     stat_birth: "Dogum yili",
+@@ -734,6 +739,7 @@ window.ACC_I18N = {
+     fed_r2_field: "FIDE ID",
+     fed_r2_note: "Resmi benzersiz profil numarasi",
+     fed_r3_field: "Unvan",
++    fed_r3_value: "Uluslararasi Satranc Ustasi (IM)",
+     fed_r3_note: "FIDE unvan kaydi",
+     fed_r4_field: "Federasyon",
+     fed_r4_note: "AZE olarak gorunur",
+@@ -809,11 +815,12 @@ window.ACC_I18N = {
+     home_title: "Abdulov Chess Club: системная подготовка для сильной игры",
+     home_intro: "Клуб предлагает профессиональное и измеримое обучение шахматам для детей и взрослых.",
+     home_photo_title: "Орхан Абдулов",
+-    home_photo_sub: "Международный мастер (IM), основатель и главный тренер Abdulov Chess Club.",
++    home_photo_sub: "Международный шахматный мастер (IM), основатель и главный тренер Abdulov Chess Club.",
++    home_hero_meta: "Международный шахматный мастер (IM) • FIDE ID 13402714 • AZE",
+     home_gallery_title: "Живые кадры с Орханом Абдуловым",
+     home_gallery_hint: "Моменты турниров, тренировок и мастер-классов",
+     home_gallery_intro: "Подборка кадров из дополнительных фото, которые вы прислали.",
+-    stat_title: "Титул FIDE",
++    stat_title: "Международный шахматный мастер (IM)",
+     stat_fideid: "FIDE ID",
+     stat_federation: "Федерация",
+     stat_birth: "Год рождения",
+@@ -997,6 +1004,7 @@ window.ACC_I18N = {
+     fed_r2_field: "FIDE ID",
+     fed_r2_note: "Официальный уникальный номер профиля",
+     fed_r3_field: "Титул",
++    fed_r3_value: "Международный шахматный мастер (IM)",
+     fed_r3_note: "Регистрация титула FIDE",
+     fed_r4_field: "Федерация",
+     fed_r4_note: "Указано как AZE",
+diff --git a/federation.html b/federation.html
+index 829204f..796b1c9 100644
+--- a/federation.html
++++ b/federation.html
+@@ -89,7 +89,7 @@
+           <tbody>
+             <tr><td data-i18n="fed_r1_field">Şahmatçı</td><td>Abdulov, Orkhan</td><td data-i18n="fed_r1_note">ratings.fide.com açıq profil</td></tr>
+             <tr><td data-i18n="fed_r2_field">FIDE ID</td><td>13402714</td><td data-i18n="fed_r2_note">Rəsmi unikal profil nömrəsi</td></tr>
+-            <tr><td data-i18n="fed_r3_field">Titul</td><td>International Master (IM)</td><td data-i18n="fed_r3_note">FIDE title qeydiyyatı</td></tr>
++            <tr><td data-i18n="fed_r3_field">Titul</td><td data-i18n="fed_r3_value">International Chess Master (IM)</td><td data-i18n="fed_r3_note">FIDE title qeydiyyatı</td></tr>
+             <tr><td data-i18n="fed_r4_field">Federasiya</td><td>Azerbaijan (AZE)</td><td data-i18n="fed_r4_note">AZE olaraq göstərilir</td></tr>
+             <tr><td data-i18n="fed_r5_field">Reytinq</td><td>2383 / 2219 / 2268</td><td data-i18n="fed_r5_note">Rapid/Blitz hissəsində inactive qeydi görünür</td></tr>
+             <tr><td data-i18n="fed_r6_field">Doğum ili</td><td>1988</td><td data-i18n="fed_r6_note">Profil info panelində göstərilir</td></tr>
+diff --git a/index.html b/index.html
+index 93a5a68..cd55174 100644
+--- a/index.html
++++ b/index.html
+@@ -116,11 +116,11 @@
+ 
+       <div class="card heroMedia">
+         <h2 data-i18n="home_photo_title">Orxan Abdulov</h2>
+-        <p data-i18n="home_photo_sub">International Master (IM), head coach and founder of Abdulov Chess Club.</p>
++        <p data-i18n="home_photo_sub">International Chess Master (IM), head coach and founder of Abdulov Chess Club.</p>
+         <div class="heroPhotoFrame">
+           <img class="heroPortrait" src="MAIN PHOTO.jpg" alt="Orxan Abdulov portrait" />
+         </div>
+-        <p class="heroMeta">IM • FIDE ID 13402714 • AZE</p>
++        <p class="heroMeta" data-i18n="home_hero_meta">International Chess Master (IM) • FIDE ID 13402714 • AZE</p>
+       </div>
+     </section>
+ 
+-- 
+2.43.0
+
+
+From a8e536b0cf63173ddaa67746fe778bb8509a5d0d Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Sat, 21 Feb 2026 00:02:00 +0000
+Subject: [PATCH 3/3] Harden responsive stability for mobile and desktop
+
+---
+ assets/site.js    |  8 +++++--
+ assets/styles.css | 59 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 65 insertions(+), 2 deletions(-)
+
+diff --git a/assets/site.js b/assets/site.js
+index 06573c8..28a05ab 100644
+--- a/assets/site.js
++++ b/assets/site.js
+@@ -9,8 +9,12 @@
+   var defaultLang = "az";
+   var currentLang = localStorage.getItem("acc_lang") || defaultLang;
+   var prefersReducedMotion = false;
++  var hasFinePointer = false;
++  var isDesktopViewport = true;
+   if (window.matchMedia) {
+     prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
++    hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
++    isDesktopViewport = window.matchMedia("(min-width: 981px)").matches;
+   }
+ 
+   function t(key, lang) {
+@@ -213,7 +217,7 @@
+     }
+   }
+ 
+-  if (!prefersReducedMotion) {
++  if (!prefersReducedMotion && hasFinePointer) {
+     var glowTargets = Array.prototype.slice.call(document.querySelectorAll(".heroPhotoFrame, .photoTile"));
+     glowTargets.forEach(function (target) {
+       var updateGlow = function (event) {
+@@ -237,7 +241,7 @@
+   }
+ 
+   var coachShots = Array.prototype.slice.call(document.querySelectorAll("[data-coach-shot]"));
+-  if (coachShots.length && !prefersReducedMotion) {
++  if (coachShots.length && !prefersReducedMotion && isDesktopViewport) {
+     var updateCoachBackdrop = function () {
+       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+       coachShots.forEach(function (shot) {
+diff --git a/assets/styles.css b/assets/styles.css
+index 81cdb31..b5e9972 100644
+--- a/assets/styles.css
++++ b/assets/styles.css
+@@ -41,6 +41,7 @@ body {
+     linear-gradient(165deg, var(--bg) 0%, var(--bg-alt) 54%, #050b19 100%);
+   position: relative;
+   overflow-x: hidden;
++  overflow-x: clip;
+ }
+ 
+ body::before,
+@@ -86,6 +87,7 @@ a {
+ img {
+   display: block;
+   max-width: 100%;
++  height: auto;
+ }
+ 
+ .container {
+@@ -295,6 +297,7 @@ img {
+ 
+ main {
+   padding: 34px 0 62px;
++  overflow-x: clip;
+ }
+ 
+ .homePage main {
+@@ -759,6 +762,7 @@ p {
+   border-radius: 14px;
+   border: 1px solid var(--line);
+   overflow-x: auto;
++  -webkit-overflow-scrolling: touch;
+   background: rgba(255, 255, 255, 0.03);
+ }
+ 
+@@ -1112,6 +1116,24 @@ select:focus-visible {
+ }
+ 
+ @media (max-width: 980px) {
++  body::before {
++    animation: none;
++    opacity: 0.72;
++  }
++
++  body::after {
++    animation: none;
++    opacity: 0.3;
++    background-size: 140% 140%, 100% 100%, 100% 100%;
++  }
++
++  .heroPhotoFrame::after,
++  .photoTile,
++  .coachShot,
++  .chessGlyph {
++    animation: none;
++  }
++
+   .coachBackdrop {
+     display: none;
+   }
+@@ -1174,6 +1196,11 @@ select:focus-visible {
+     object-position: top center;
+   }
+ 
++  .heroLanding .heroMeta {
++    font-size: 11px;
++    letter-spacing: 0.04em;
++  }
++
+   .heroLanding .heroMedia h2,
+   .heroLanding .heroMedia p,
+   .heroLanding .heroMeta {
+@@ -1213,12 +1240,44 @@ select:focus-visible {
+     grid-auto-rows: 180px;
+   }
+ 
++  .table {
++    min-width: 560px;
++  }
++
++  .table th,
++  .table td {
++    padding: 10px;
++  }
++
+   .photoTileMain,
+   .photoTile:nth-child(6) {
+     grid-column: span 2;
+   }
+ }
+ 
++@media (hover: none), (pointer: coarse) {
++  .btn:hover {
++    transform: none;
++    border-color: var(--line);
++    box-shadow: none;
++  }
++
++  .btnPrimary:hover {
++    box-shadow: none;
++  }
++
++  .card:hover {
++    transform: none;
++    border-color: var(--line);
++    box-shadow: var(--shadow-soft);
++  }
++
++  .photoTile:hover img {
++    transform: none;
++    filter: none;
++  }
++}
++
+ @media (max-width: 520px) {
+   .kpiGrid {
+     grid-template-columns: 1fr;
+-- 
+2.43.0
+
