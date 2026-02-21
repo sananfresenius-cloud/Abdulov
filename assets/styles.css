@@ -322,16 +322,17 @@ main {
   position: absolute;
   inset: -8%;
   background:
-    linear-gradient(145deg, rgba(9, 21, 45, 0.84), rgba(8, 18, 38, 0.38)),
-    radial-gradient(circle at 22% 18%, rgba(61, 192, 255, 0.28), rgba(61, 192, 255, 0) 44%),
-    radial-gradient(circle at 80% 74%, rgba(255, 97, 120, 0.18), rgba(255, 97, 120, 0) 46%),
-    url("chess-bg-1.jpg"),
-    url("chess-bg-2.jpg");
-  background-size: auto, auto, auto, cover, cover;
-  background-position: center, center, center, 25% 34%, 76% 66%;
+    linear-gradient(145deg, rgba(7, 10, 16, 0.86), rgba(8, 12, 18, 0.56)),
+    radial-gradient(circle at 24% 16%, rgba(241, 201, 123, 0.28), rgba(241, 201, 123, 0) 46%),
+    radial-gradient(circle at 80% 72%, rgba(130, 214, 255, 0.18), rgba(130, 214, 255, 0) 48%),
+    url("gold-chess-1.jpg"),
+    url("gold-chess-2.jpg"),
+    url("gold-chess-3.jpg");
+  background-size: auto, auto, auto, cover, cover, cover;
+  background-position: center, center, center, 24% 42%, 74% 28%, 70% 78%;
   background-repeat: no-repeat;
-  filter: saturate(0.86) contrast(1.06);
-  opacity: 0.36;
+  filter: saturate(1.06) contrast(1.08);
+  opacity: 0.42;
 }
 
 .coachBackdrop::after {
@@ -879,8 +880,8 @@ label {
   overflow: hidden;
   border: 1px solid rgba(173, 199, 241, 0.3);
   background:
-    linear-gradient(120deg, rgba(7, 18, 36, 0.55), rgba(7, 18, 36, 0.3)),
-    url("chess-bg-2.jpg") center/cover no-repeat;
+    linear-gradient(120deg, rgba(7, 18, 36, 0.56), rgba(7, 18, 36, 0.28)),
+    url("gold-chess-2.jpg") center 38%/cover no-repeat;
 }
 
 .motifBand::before {
@@ -1329,7 +1330,7 @@ body {
     radial-gradient(circle at 92% 10%, rgba(130, 214, 255, 0.14), transparent 42%),
     radial-gradient(circle at 85% 86%, rgba(132, 213, 168, 0.1), transparent 42%),
     linear-gradient(175deg, #04060b 0%, #0c1016 52%, #141923 100%),
-    url("chess-bg-2.jpg") center / cover fixed no-repeat;
+    url("gold-chess-3.jpg") center / cover fixed no-repeat;
 }
 
 body::before {
@@ -1337,7 +1338,7 @@ body::before {
   opacity: 0.66;
   background:
     linear-gradient(160deg, rgba(4, 6, 10, 0.72), rgba(4, 6, 10, 0.86)),
-    url("chess-bg-1.jpg") center / cover no-repeat,
+    url("gold-chess-1.jpg") center / cover no-repeat,
     radial-gradient(circle at 12% 20%, rgba(255, 224, 170, 0.18) 0, rgba(255, 224, 170, 0) 48%),
     radial-gradient(circle at 82% 14%, rgba(132, 214, 255, 0.2) 0, rgba(132, 214, 255, 0) 42%),
     repeating-linear-gradient(
@@ -1366,7 +1367,10 @@ body::after {
 .siteHeader {
   border-bottom: 1px solid rgba(247, 212, 157, 0.36);
   background:
-    linear-gradient(180deg, rgba(7, 9, 13, 0.95), rgba(10, 12, 17, 0.8));
+    linear-gradient(180deg, rgba(7, 9, 13, 0.96), rgba(10, 12, 17, 0.88)),
+    linear-gradient(120deg, rgba(241, 201, 123, 0.16), rgba(130, 214, 255, 0.08)),
+    url("gold-chess-1.jpg") center 24% / cover no-repeat;
+  background-blend-mode: normal, screen, normal;
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.48);
 }
 
@@ -1628,31 +1632,35 @@ h3 {
 .innerPage main > .container > section.card:first-of-type::before,
 .pageAbout .hero > .card:first-child::before {
   background:
-    linear-gradient(150deg, rgba(8, 10, 14, 0.72), rgba(8, 10, 14, 0.86)),
-    url("chess-bg-1.jpg") center/cover no-repeat;
+    linear-gradient(150deg, rgba(8, 10, 14, 0.76), rgba(8, 10, 14, 0.9)),
+    radial-gradient(circle at 72% 22%, rgba(241, 201, 123, 0.26), rgba(241, 201, 123, 0) 42%),
+    url("gold-chess-2.jpg") center 24%/cover no-repeat;
   opacity: 0.62;
 }
 
 .pageResults main > .container > section.card:first-of-type::before,
 .pagePress main > .container > section.card:first-of-type::before {
   background:
-    linear-gradient(150deg, rgba(8, 10, 14, 0.72), rgba(8, 10, 14, 0.86)),
-    url("chess-bg-2.jpg") center/cover no-repeat;
+    linear-gradient(150deg, rgba(8, 10, 14, 0.78), rgba(8, 10, 14, 0.9)),
+    radial-gradient(circle at 30% 30%, rgba(241, 201, 123, 0.24), rgba(241, 201, 123, 0) 42%),
+    url("gold-chess-1.jpg") center 42%/cover no-repeat;
   opacity: 0.62;
 }
 
 .pageContact main > .container > section.card:first-of-type::before {
   background:
-    linear-gradient(150deg, rgba(8, 10, 14, 0.72), rgba(8, 10, 14, 0.86)),
-    url("orxan-gallery-6.jpg") center/cover no-repeat;
-  opacity: 0.58;
+    linear-gradient(150deg, rgba(8, 10, 14, 0.74), rgba(8, 10, 14, 0.9)),
+    radial-gradient(circle at 24% 34%, rgba(241, 201, 123, 0.2), rgba(241, 201, 123, 0) 38%),
+    url("gold-chess-3.jpg") center/cover no-repeat;
+  opacity: 0.64;
 }
 
 .pageFederation main > .container > section.card:first-of-type::before {
   background:
-    linear-gradient(150deg, rgba(8, 10, 14, 0.72), rgba(8, 10, 14, 0.86)),
-    url("orxan-gallery-5.jpg") center/cover no-repeat;
-  opacity: 0.6;
+    linear-gradient(150deg, rgba(8, 10, 14, 0.74), rgba(8, 10, 14, 0.88)),
+    radial-gradient(circle at 72% 20%, rgba(241, 201, 123, 0.2), rgba(241, 201, 123, 0) 36%),
+    url("gold-chess-1.jpg") center 30%/cover no-repeat;
+  opacity: 0.62;
 }
 
 .pageAbout .hero > .card:first-child > *,
@@ -1711,15 +1719,29 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(8, 10, 14, 0.08), rgba(8, 10, 14, 0.74));
+    linear-gradient(180deg, rgba(8, 10, 14, 0.04), rgba(8, 10, 14, 0.72)),
+    radial-gradient(circle at 18% 14%, rgba(241, 201, 123, 0.22), rgba(241, 201, 123, 0) 50%);
 }
 
 .stripFrame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(1.08) contrast(1.02);
   transform: scale(1.02);
   transition: transform 260ms ease;
+}
+
+.stripFrame:nth-child(1) img {
+  object-position: center 42%;
+}
+
+.stripFrame:nth-child(2) img {
+  object-position: center 26%;
+}
+
+.stripFrame:nth-child(3) img {
+  object-position: center 34%;
 }
 
 .stripFrame:hover img {
