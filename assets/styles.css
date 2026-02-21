@@ -1836,22 +1836,31 @@ h3 {
 @media (max-width: 980px) {
   body {
     background:
-      radial-gradient(circle at 78% 22%, rgba(241, 201, 123, 0.3), rgba(241, 201, 123, 0) 46%),
-      linear-gradient(160deg, rgba(7, 10, 16, 0.48), rgba(9, 12, 18, 0.62)),
+      radial-gradient(circle at 78% 22%, rgba(241, 201, 123, 0.24), rgba(241, 201, 123, 0) 46%),
+      linear-gradient(160deg, rgba(7, 10, 16, 0.72), rgba(9, 12, 18, 0.82)),
       url("gold-chess-1.jpg") center 30% / cover no-repeat;
   }
 
   body::before {
     inset: 0;
-    opacity: 0.2;
+    opacity: 0.16;
     background:
-      radial-gradient(circle at 22% 28%, rgba(241, 201, 123, 0.26), rgba(241, 201, 123, 0) 50%),
-      radial-gradient(circle at 78% 78%, rgba(132, 213, 168, 0.1), rgba(132, 213, 168, 0) 46%);
+      radial-gradient(circle at 22% 28%, rgba(241, 201, 123, 0.2), rgba(241, 201, 123, 0) 48%),
+      radial-gradient(circle at 78% 78%, rgba(132, 213, 168, 0.08), rgba(132, 213, 168, 0) 44%);
     background-blend-mode: screen, screen;
   }
 
   body::after {
     display: none;
+  }
+
+  .navLinks,
+  .navRight .btnPrimary {
+    display: none !important;
+  }
+
+  .menuToggle {
+    display: inline-flex !important;
   }
 
   .topNav {
@@ -1865,6 +1874,7 @@ h3 {
   .navRight {
     margin-left: auto;
     margin-top: 0;
+    flex-shrink: 0;
   }
 
   .mobilePanel {
@@ -1900,12 +1910,12 @@ h3 {
 
 @media (max-width: 760px) {
   body {
-    background-position: center 26%;
+    background-position: center 24%;
   }
 
   body::before {
     inset: 0;
-    opacity: 0.14;
+    opacity: 0.18;
   }
 
   .topNav {
@@ -1924,16 +1934,21 @@ h3 {
 
   .navRight {
     width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 8px;
     margin-top: 0;
+    min-width: 0;
   }
 
   .langSwitch {
     flex: 1 1 auto;
+    min-width: 0;
     justify-content: flex-start;
     overflow-x: auto;
     padding: 3px;
+    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
 
