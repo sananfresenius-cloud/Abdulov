@@ -16,7 +16,7 @@ window.ACC_I18N = {
     btn_fide: "FIDE profil",
     btn_instagram: "Instagram",
 
-    home_tag: "Welcome",
+    home_tag: "Xoş gəlmisiniz",
     home_title: "Abdulov Chess Club: daha güclü oyun üçün sistemli hazırlıq",
     home_intro: "Klubumuz uşaqlar və böyüklər üçün peşəkar, ölçülə bilən və motivasiyaedici şahmat təlimi təqdim edir.",
     home_photo_title: "Orxan Abdulov",
@@ -546,7 +546,7 @@ window.ACC_I18N = {
     btn_fide: "FIDE profil",
     btn_instagram: "Instagram",
 
-    home_tag: "Welcome",
+    home_tag: "Hos geldiniz",
     home_title: "Abdulov Chess Club: daha guclu oyun icin sistemli egitim",
     home_intro: "Kulübümüz cocuklar ve yetiskinler icin profesyonel ve olculebilir satranc egitimi sunar.",
     home_photo_title: "Orkhan Abdulov",
@@ -811,7 +811,7 @@ window.ACC_I18N = {
     btn_fide: "Профиль FIDE",
     btn_instagram: "Instagram",
 
-    home_tag: "Welcome",
+    home_tag: "Добро пожаловать",
     home_title: "Abdulov Chess Club: системная подготовка для сильной игры",
     home_intro: "Клуб предлагает профессиональное и измеримое обучение шахматам для детей и взрослых.",
     home_photo_title: "Орхан Абдулов",
