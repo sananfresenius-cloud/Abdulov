@@ -1326,51 +1326,34 @@ select:focus-visible {
 
 body {
   background:
-    radial-gradient(circle at 10% -8%, rgba(241, 201, 123, 0.18), transparent 39%),
-    radial-gradient(circle at 92% 10%, rgba(130, 214, 255, 0.14), transparent 42%),
-    radial-gradient(circle at 85% 86%, rgba(132, 213, 168, 0.1), transparent 42%),
-    linear-gradient(175deg, #04060b 0%, #0c1016 52%, #141923 100%),
-    url("gold-chess-3.jpg") center / cover fixed no-repeat;
+    radial-gradient(circle at 76% 18%, rgba(241, 201, 123, 0.24), rgba(241, 201, 123, 0) 44%),
+    linear-gradient(160deg, rgba(4, 6, 10, 0.9), rgba(7, 10, 15, 0.92)),
+    url("gold-chess-2.jpg") center 18% / cover fixed no-repeat;
 }
 
 body::before {
   inset: -28vmax;
-  opacity: 0.66;
+  opacity: 0.46;
   background:
-    linear-gradient(160deg, rgba(4, 6, 10, 0.72), rgba(4, 6, 10, 0.86)),
+    linear-gradient(160deg, rgba(4, 6, 10, 0.74), rgba(4, 6, 10, 0.9)),
     url("gold-chess-1.jpg") center / cover no-repeat,
-    radial-gradient(circle at 12% 20%, rgba(255, 224, 170, 0.18) 0, rgba(255, 224, 170, 0) 48%),
-    radial-gradient(circle at 82% 14%, rgba(132, 214, 255, 0.2) 0, rgba(132, 214, 255, 0) 42%),
-    repeating-linear-gradient(
-      45deg,
-      rgba(248, 235, 205, 0.038) 0 16px,
-      rgba(16, 20, 27, 0.04) 16px 32px
-    );
-  background-blend-mode: normal, normal, screen, screen, normal;
-  filter: blur(0);
+    radial-gradient(circle at 20% 72%, rgba(241, 201, 123, 0.14), rgba(241, 201, 123, 0) 52%);
+  background-blend-mode: normal, normal, screen;
+  filter: saturate(1.02);
 }
 
 body::after {
-  opacity: 0.44;
+  opacity: 0.52;
   background-image:
-    linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 252, 240, 0.12) 50%, rgba(255, 255, 255, 0) 60%),
-    linear-gradient(
-      45deg,
-      rgba(251, 236, 205, 0.06) 25%,
-      rgba(20, 25, 32, 0.08) 25% 50%,
-      rgba(251, 236, 205, 0.06) 50% 75%,
-      rgba(20, 25, 32, 0.08) 75% 100%
-    );
-  background-size: 210% 180%, 92px 92px;
+    linear-gradient(120deg, rgba(255, 255, 255, 0) 42%, rgba(255, 252, 240, 0.11) 50%, rgba(255, 255, 255, 0) 58%),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0), rgba(1, 3, 8, 0.7) 76%);
+  background-size: 210% 180%, 100% 100%;
 }
 
 .siteHeader {
-  border-bottom: 1px solid rgba(247, 212, 157, 0.36);
-  background:
-    linear-gradient(180deg, rgba(7, 9, 13, 0.96), rgba(10, 12, 17, 0.88)),
-    linear-gradient(120deg, rgba(241, 201, 123, 0.16), rgba(130, 214, 255, 0.08)),
-    url("gold-chess-1.jpg") center 24% / cover no-repeat;
-  background-blend-mode: normal, screen, normal;
+  border-bottom: 1px solid rgba(247, 212, 157, 0.32);
+  background: linear-gradient(180deg, rgba(7, 9, 13, 0.92), rgba(10, 12, 17, 0.86));
+  backdrop-filter: blur(12px);
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.48);
 }
 
@@ -1391,20 +1374,27 @@ body::after {
 }
 
 .topNav {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 0 12px;
 }
 
 .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1 1 auto;
+  min-width: 0;
   justify-content: center;
-  margin-top: 8px;
-  align-self: start;
 }
 
 .navRight {
-  margin-top: 8px;
-  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .brandTitle,
@@ -1431,6 +1421,9 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  min-height: 38px;
+  padding: 8px 10px;
+  font-size: 13px;
   letter-spacing: 0.01em;
   text-align: center;
 }
@@ -1842,15 +1835,36 @@ h3 {
 }
 
 @media (max-width: 980px) {
+  body {
+    background:
+      linear-gradient(160deg, rgba(4, 6, 10, 0.94), rgba(6, 8, 13, 0.96)),
+      url("gold-chess-1.jpg") center 24% / cover no-repeat;
+  }
+
+  body::before {
+    inset: -12vmax;
+    opacity: 0.26;
+    background:
+      linear-gradient(160deg, rgba(4, 6, 10, 0.78), rgba(4, 6, 10, 0.9)),
+      radial-gradient(circle at 22% 28%, rgba(241, 201, 123, 0.24), rgba(241, 201, 123, 0) 44%);
+    background-blend-mode: normal, screen;
+  }
+
+  body::after {
+    display: none;
+  }
+
   .topNav {
-    grid-template-columns: minmax(0, 1fr) auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
-    align-items: start;
+    padding: 13px 0 11px;
   }
 
   .navRight {
     margin-left: auto;
-    margin-top: 6px;
+    margin-top: 0;
   }
 
   .mobilePanel {
@@ -1885,37 +1899,44 @@ h3 {
 }
 
 @media (max-width: 760px) {
-  body::after {
-    background-size: 145% 140%, 66px 66px;
+  body {
+    background-position: center 18%;
+  }
+
+  body::before {
+    inset: 0;
+    opacity: 0.18;
   }
 
   .topNav {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    align-items: start;
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 0 10px;
   }
 
   .brand {
-    justify-self: start;
+    justify-self: auto;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .navRight {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    justify-content: flex-end;
     gap: 8px;
-    margin-top: 6px;
+    margin-top: 0;
   }
 
   .langSwitch {
-    flex: 1 1 auto;
-    justify-content: flex-start;
+    flex: 0 0 auto;
+    justify-content: center;
   }
 
   .menuToggle {
-    min-width: 92px;
-    padding-inline: 12px;
+    min-width: 84px;
+    padding-inline: 10px;
   }
 
   .brandTitle {
@@ -1956,7 +1977,7 @@ h3 {
 
 @media (max-width: 520px) {
   .brand {
-    justify-self: start;
+    justify-self: auto;
   }
 
   .mobilePanel.show {
