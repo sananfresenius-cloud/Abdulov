@@ -63,6 +63,21 @@
     applyLang(currentLang);
   }
 
+  if (!prefersReducedMotion && !document.querySelector(".chessFloatLayer")) {
+    var floatLayer = document.createElement("div");
+    floatLayer.className = "chessFloatLayer";
+    floatLayer.setAttribute("aria-hidden", "true");
+    floatLayer.innerHTML = [
+      '<span class="chessFloatPiece">♞</span>',
+      '<span class="chessFloatPiece">♛</span>',
+      '<span class="chessFloatPiece">♜</span>',
+      '<span class="chessFloatPiece">♝</span>',
+      '<span class="chessFloatPiece">♟</span>',
+      '<span class="chessFloatPiece">♘</span>'
+    ].join("");
+    document.body.appendChild(floatLayer);
+  }
+
   var mobileBtn = document.getElementById("mobileBtn");
   var mobileMenu = document.getElementById("mobileMenu");
   if (mobileBtn && mobileMenu) {
