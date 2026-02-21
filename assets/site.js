@@ -9,8 +9,12 @@
   var defaultLang = "az";
   var currentLang = localStorage.getItem("acc_lang") || defaultLang;
   var prefersReducedMotion = false;
+  var hasFinePointer = false;
+  var isDesktopViewport = true;
   if (window.matchMedia) {
     prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    isDesktopViewport = window.matchMedia("(min-width: 981px)").matches;
   }
 
   function t(key, lang) {
@@ -213,7 +217,7 @@
     }
   }
 
-  if (!prefersReducedMotion) {
+  if (!prefersReducedMotion && hasFinePointer) {
     var glowTargets = Array.prototype.slice.call(document.querySelectorAll(".heroPhotoFrame, .photoTile"));
     glowTargets.forEach(function (target) {
       var updateGlow = function (event) {
@@ -237,7 +241,7 @@
   }
 
   var coachShots = Array.prototype.slice.call(document.querySelectorAll("[data-coach-shot]"));
-  if (coachShots.length && !prefersReducedMotion) {
+  if (coachShots.length && !prefersReducedMotion && isDesktopViewport) {
     var updateCoachBackdrop = function () {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
       coachShots.forEach(function (shot) {
